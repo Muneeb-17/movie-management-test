@@ -21,7 +21,7 @@ app.use(cors({credentials: true, origin: "https://movie-management-app-forntend.
 app.use('/', authenticationRoutes);
 app.use('/movies', moviesRoutes);
 
-mongoose.connect('mongodb+srv://muneeburrehman535:vHzFGUc5nklXV6aJ@cluster0.ecseo.mongodb.net/', {
+mongoose.connect(`${process.env.MONGO_DB}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => {
