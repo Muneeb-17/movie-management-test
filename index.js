@@ -15,13 +15,13 @@ app.use(express.json())
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use('/uploads', express.static('uploads'));
-app.use(cors({credentials: true, origin: "http://localhost:3000"}))
+app.use(cors({credentials: true, origin: "https://movie-management-app-forntend.vercel.app"}))
 
 //Routes
 app.use('/', authenticationRoutes);
 app.use('/movies', moviesRoutes);
 
-mongoose.connect(process.env.MONGO_DB, {
+mongoose.connect('mongodb+srv://muneeburrehman535:vHzFGUc5nklXV6aJ@cluster0.ecseo.mongodb.net/', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => {
