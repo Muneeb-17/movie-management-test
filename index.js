@@ -28,4 +28,4 @@ mongoose.connect('mongodb+srv://muneeburrehman535:vHzFGUc5nklXV6aJ@cluster0.ecse
     console.log('connection successfull');
 }).catch((err) => console.log(err,'no connection'));
 
-app.listen(5001, () => console.log(`Server running on port: http://localhost:5000`));
+app.listen(process.env.PORT, () => console.log(`Server running on port: http://localhost:${process.env.PORT}`));
